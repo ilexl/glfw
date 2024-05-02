@@ -99,24 +99,24 @@ project "GLFW"
 		}
 
 	filter "configurations:Debug"
-		staticruntime "on"
+		buildoptions "/MDd"
 		runtime "Debug"
 		symbols "on"
 
 	filter { "system:windows", "configurations:Debug-AS" }
-		staticruntime "on"	
+		buildoptions "/MD"	
 		runtime "Debug"
 		symbols "on"
 		sanitize { "Address" }
 		flags { "NoRuntimeChecks", "NoIncrementalLink" }
 
 	filter "configurations:Release"
-		staticruntime "on"
+		buildoptions "/MD"	
 		runtime "Release"
 		optimize "speed"
 
     filter "configurations:Dist"
-		staticruntime "on"
+		buildoptions "/MD"	
 		runtime "Release"
 		optimize "speed"
         symbols "off"
