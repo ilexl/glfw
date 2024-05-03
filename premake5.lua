@@ -104,19 +104,16 @@ project "GLFW"
 		symbols "on"
 
 	filter { "system:windows", "configurations:Debug-AS" }
-		buildoptions "/MD"	
 		runtime "Debug"
 		symbols "on"
 		sanitize { "Address" }
 		flags { "NoRuntimeChecks", "NoIncrementalLink" }
 
-	filter "configurations:Release"
-		buildoptions "/MD"	
+	filter "configurations:Release"	
 		runtime "Release"
 		optimize "speed"
 
     filter "configurations:Dist"
-		buildoptions "/MD"	
 		runtime "Release"
 		optimize "speed"
         symbols "off"
